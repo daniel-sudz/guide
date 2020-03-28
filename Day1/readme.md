@@ -41,7 +41,7 @@ Here we create an instance of express called app and export it.
 app.use(compression());
 ```
 
-### Here we tell express that we would like to use the middleware compression. Compression applies g-zip encoding for our server to reduce the bandwidth and load time if we want to serve large content like pictures. 
+ Here we tell express that we would like to use the middleware compression. Compression applies g-zip encoding for our server to reduce the bandwidth and load time if we want to serve large content like pictures. 
 
 
 ```
