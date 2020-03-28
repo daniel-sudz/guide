@@ -5,3 +5,5 @@ Guide for Nodejs, Firebase, and other server stuff
 https://github.com/daniel-sudz/guide/tree/master/Day1
 
 ## Day2: Dealing with Firebase Database
+
+## Day3: Websockets or something if someone wants this
