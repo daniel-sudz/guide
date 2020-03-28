@@ -1,0 +1,19 @@
+{
+  "name": "guide",
+  "version": "1.0.0",
+  "description": "Guide for Servers and Other React Stuff",
+  "main": "greenlock.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniel-sudz/guide.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daniel-sudz/guide/issues"
+  },
+  "homepage": "https://github.com/daniel-sudz/guide#readme"
+}
