@@ -65,7 +65,7 @@ This tells our server to get requests on the path "/" or the root domain. Req re
 ```
 app.listen(80, () => console.log(`Listening on Port 80`))
 ```
- This tells our server to listen on port 80. Hoever, we won't add this peice of code because we are going to let greenlock handle the requests
+ This tells our server to listen on port 80. However, we won't add this peice of code because we are going to let greenlock handle the requests
 
 # Introducing greenlock express 
 
