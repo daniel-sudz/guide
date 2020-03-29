@@ -3,7 +3,7 @@
 ## We will create a simple nodejs app that will return a hello message on a root domain
 File: server.js
 
-```
+```javascript
 var compression = require('compression');
 var express = require('express');
 
@@ -23,7 +23,7 @@ app.get('/', function (req,res) {
 ```
 ### Explanation: 
 
-```
+```javascript
 var compression = require('compression');
 var express = require('express');
 ```
@@ -31,41 +31,41 @@ var express = require('express');
 
   Compression is is library that is known as a "middleware". Middleware are basically plugins for express. 
 
-```
+```javascript
 var app = express();
 module.exports = app;
 ```
 Here we create an instance of express called app and export it.
 
-```
+```javascript
 app.use(compression());
 ```
 
-### Here we tell express that we would like to use the middleware compression. Compression applies g-zip encoding for our server to reduce the bandwidth and load time if we want to serve large content like pictures. 
+ Here we tell express that we would like to use the middleware compression. Compression applies g-zip encoding for our server to reduce the bandwidth and load time if we want to serve large content like pictures. 
 
 
-```
+```javascript
 var path = require('path');
 app.use(express.static(path.resolve('./public')));
 ```
 Here we import the middleware path and tell our express instance to serve a folder names public under our root domain. We don't use this for anything in our server right now but if we wanted to say serve an html page, we would place the file in our public folder and would be able to serve it from "/myfile.html"
 
-```
+```javascript
 app.get('/', function (req,res) {
 	res.send("Welcome to the https server");
 });
 ```
 This tells our server to get requests on the path "/" or the root domain. Req represents the request object and res represents the response object. 
 
-```
+```javascript
 	res.send("Welcome to the https server");
 ```
  Here we tell our server to send a response. <br>
  Now if you were to run this js file then nothing would happen. The reson for this is that our server is not listening for any incoming traffic. To tell our server to listen for traffic we would need to include this command: 
-```
+```javascript
 app.listen(80, () => console.log(`Listening on Port 80`))
 ```
- This tells our server to listen on port 80. Hoever, we won't add this peice of code because we are going to let greenlock handle the requests
+ This tells our server to listen on port 80. However, we won't add this peice of code because we are going to let greenlock handle the requests
 
 # Introducing greenlock express 
 
@@ -79,7 +79,7 @@ app.listen(80, () => console.log(`Listening on Port 80`))
 
 ### File: greenlock.js
 
-```
+```javascript
 "use strict";
  
 var app = require("./server.js");
@@ -100,12 +100,12 @@ require("greenlock-express")
     .serve(app);
 ```
 
-```
+```javascript
 var app = require("./server.js");
 ```
 Here we import the express instance that we created in our server.js file as app.  
 
-```
+```javascript
 require("greenlock-express")
     .init({
         packageRoot: __dirname,
@@ -125,7 +125,7 @@ require("greenlock-express")
 Here is greenlock-express doing magic by automatically creating certificates for our domain. You neeed to modify the greenlock.d/config.json file and the maintainerEmail. 
 
 ### File: ./greenlock.d/config.json
-```
+```javascript
 { "sites": [{ "subject": "sudz.dev", "altnames": ["sudz.dev"] }] }
 ```
 
